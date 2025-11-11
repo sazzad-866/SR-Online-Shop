@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Akash sheikh",
+    "comment": "Great quality and fast delivery!",
+    "rating": 5,
+    "date": "2025/10/01"
+  },
+
+  {
+    "name": "Ishfar Ibne Jafar",
+    "comment": "Loved the interface, easy to use.",
+    "rating": 4,
+    "date": "2025/09/18"
+  },
+
+
+  {
+    "name": "Nusrat Jahan",
+    "comment": "Affordable and reliable!",
+    "rating": 5,
+    "date": "2025/08/12"
+  },
+  {
+
+    "name": "Hasan Mahmud",
+    "comment": "Customer service was very responsive.",
+    "rating": 4,
+    "date": "2025/07/30"
+  }
+]

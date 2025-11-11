@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SR Online Shop 🛒</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+
+<style>
+  @media (max-width: 768px) {
+    #cartSection {
+      position: static !important;
+      width: 100% !important;
+      height: auto !important;
+      margin-top: 2rem;
+    }
+  }
+</style>
+
+
+
+
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!--navbar-->
+<nav class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4 flex-wrap">
+    <!--logo & titleitle -->
+    <div class="flex items-center space-x-2">
+      <img src="https://static.vecteezy.com/system/resources/previews/003/026/679/non_2x/logo-monogram-design-template-free-vector.jpg" 
+           alt="SR logo" 
+           class="h-10 w-10 rounded-full object-cover">
+      <h1 class="font-bold text-2xl text-black-700">SR Online Shop</h1>
+    </div>
+
+    <!--Menu Button for mobile   -->
+    <button id="menuBtn" class="block md:hidden text-gray-700 focus:outline-none">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+
+    <!--Menu-->
+    <ul id="menuList" class="hidden w-full md:flex md:w-auto flex-col md:flex-row md:space-x-6 mt-3 md:mt-0 font-medium text-center md:text-left">
+      <li><a href="#home" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Home</a></li>
+      <li><a href="#products" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Products</a></li>
+      <li><a href="#reviews" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Reviews</a></li>
+      <li><a href="#contact" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Contact</a></li>
+    </ul>
+
+
+
+
+    <!--balance_section-->
+    <div class="mt-3 md:mt-0">
+      <span id="balance" class="text-sm bg-blue-100 px-3 py-1 rounded">Balance: 1000 BDT</span>
+      <button id="addMoneyBtn" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">+ Add</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+<!--slidebanner-->
+
+<section id="home" class="relative w-full overflow-hidden">
+  <div class="overflow-hidden relative w-full h-96 md:h-[500px]"> <!-- taller banner -->
+    <div id="bannerContainer" class="flex transition-transform duration-700 h-full">
+
+
+      <img src="https://img.freepik.com/premium-photo/red-white-cup-with-red-label-it_337384-110367.jpg?semt=ais_hybrid&w=740&q=80" class="w-full min-w-full flex-shrink-0 h-full object-contain bg-gray-100">
+      <img src="https://www.pencoadventures.com/wp-content/uploads/2025/08/online-store-banner-slide-1.png" class="w-full min-w-full flex-shrink-0 h-full object-contain bg-gray-100">
+
+      <img src="https://mtsheridanplaza.com.au/wp-content/uploads/2024/10/Win-your-shopping-Slider.png" class="w-full min-w-full flex-shrink-0 h-full object-contain bg-gray-100">
+
+
+    </div>
+
+    <!--Buttons-->
+    <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow">◀</button>
+    <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow">▶</button>
+  </div>
+</section>
+
+
+
+
+
+
+<!--products & cart---->
+<section id="shop" class="relative max-w-7xl mx-auto py-10 flex gap-6">
+
+  <!--products -->
+  <div id="products" class="flex-1 pr-[22rem]">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Products</h2>
+    <div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </div>
+
+  <!--cart -->
+  <aside id="cartSection"
+    class="w-80 bg-white shadow-lg rounded-lg p-4 sticky top-24 self-start h-[70vh] overflow-y-auto border hidden lg:block">
+    <h2 class="text-3xl font-bold mb-3 text-center text-blue-600">🛒 Shopping Cart</h2>
+    <div id="cartItems" class="space-y-2"></div>
+
+    <div class="text-right mt-4 border-t pt-3">
+      <p>Subtotal: <span id="subtotal">0</span> BDT</p>
+      <p>Delivery: <span id="delivery">50</span> BDT</p>
+      <p>Discount: <span id="discount">0</span> BDT</p>
+      <p class="font-bold text-blue-600">Total: <span id="total">0</span> BDT</p>
+      <input id="coupon" placeholder="Enter coupon code" class="border p-1 mt-2 w-full rounded">
+      <button id="applyCoupon" class="bg-green-500 text-white px-3 py-1 mt-2 w-full rounded">Apply</button>
+    </div>
+  </aside>
+
+</section>
+
+
+
+
+
+
+
+  <!--reviews-->
+  <section id="reviews" class="bg-gray-100 py-10">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Customer Reviews</h2>
+    <div id="reviewContainer" class="max-w-3xl mx-auto overflow-hidden relative text-center"></div>
+  </section>
+
+
+  <!--contact_form-->
+  <section id="contact" class="max-w-xl mx-auto py-10">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Contact Us</h2>
+    <form id="contactForm" class="space-y-3">
+      <input type="text" id="name" placeholder="Name" class="w-full border p-2 rounded" required>
+      <input type="email" id="email" placeholder="Email" class="w-full border p-2 rounded" required>
+      <textarea id="message" placeholder="Message" class="w-full border p-2 rounded" required></textarea>
+      
+      <button class="bg-blue-500 text-white px-4 py-2 rounded w-full">Submit</button>
+    </form>
+    <p id="thankYouMsg" class="text-center mt-3 text-green-600 hidden">✅ Thank you for contacting us!</p>
+  </section>
+
+
+
+  <!--About_Us-->
+  <section id="about" class="max-w-4xl mx-auto py-12 px-4 text-center bg-gray-50 rounded-lg shadow-inner mt-10">
+    <h2 class="text-3xl font-bold mb-4 text-blue-600">About SR Online Shop</h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      Welcome to <span class="font-semibold text-blue-500">SR Online Shop</span> — your trusted destination for
+      quality and affordable products online. We bring together a wide range of electronics, fashion, and accessories 
+      from verified sellers to give you the best shopping experience.  
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      Our mission is to make online shopping simple, secure, and enjoyable for everyone. 
+      With reliable delivery, verified products, and responsive support — we ensure satisfaction with every purchase.
+    </p>
+  </section>
+
+<!--social links -->
+<section class="text-center py-6 bg-white mt-6">
+  <h3 class="text-2xl font-bold mb-3 text-blue-700">Follow Us</h3>
+  <div class="flex justify-center space-x-6 text-2xl">
+    <a href="https://www.facebook.com" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="text-pink-500 hover:text-pink-700 transition">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://t.me" target="_blank" class="text-blue-400 hover:text-blue-600 transition">
+      <i class="fa-brands fa-telegram"></i>
+    </a>
+  </div>
+</section>
+
+
+
+  <!--footer-->
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2025 SROnlineShop. All rights reserved.</p>
+    
+    <button id="backToTop" class="text-sm underline mt-2">Back to Top ↑</button>
+  </footer>
+
+  <script src="script.js"></script>
+
+
+
+
+<!--floating_Cart button for mobile-->
+<button id="mobileCartBtn"
+  class="lg:hidden fixed bottom-6 right-6 bg-blue-600 text-white rounded-full w-14 h-14 text-2xl shadow-lg">
+  🛒
+</button>
+
+<!--mobile cart popup-->
+<div id="mobileCartPopup"
+  class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+  <div class="bg-white w-80 p-4 rounded-lg shadow-lg relative">
+    <button id="closeMobileCart"
+
+      class="absolute top-2 right-2 text-red-600 font-bold text-lg">✖</button>
+    <h2 class="text-xl font-bold mb-3 text-center">🛒 Shopping Cart</h2>
+
+    <div id="mobileCartItems" class="space-y-2 max-h-60 overflow-y-auto"></div>
+
+    <div class="text-right mt-4 border-t pt-3">
+      <p>Subtotal: <span id="mSubtotal">0</span> BDT</p>
+      <p>Delivery: <span id="mDelivery">50</span> BDT</p>
+      <p>Discount: <span id="mDiscount">0</span> BDT</p>
+      <p class="font-bold text-blue-600">Total: <span id="mTotal">0</span> BDT</p>
+      <button id="mCheckout" class="bg-green-500 text-white px-3 py-1 mt-2 w-full rounded">Checkout</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
