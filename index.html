@@ -25,22 +25,20 @@
 </style>
 
 
-
-
-
 </head>
 <body class="bg-gray-50 text-gray-800">
 
 
 <!-- Navbar -->
+<!--navbar-->
 <nav class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4 flex-wrap">
-    
+
     <!-- Logo & Title -->
     <div class="flex items-center space-x-2">
       <img 
-        src="https://static.vecteezy.com/system/resources/previews/003/026/679/non_2x/logo-monogram-design-template-free-vector.jpg" 
-        alt="SR logo" 
+        src="https://static.vecteezy.com/system/resources/previews/003/026/679/non_2x/logo-monogram-design-template-free-vector.jpg"
+        alt="SR logo"
         class="h-10 w-10 rounded-full object-cover">
       <h1 class="font-bold text-2xl text-black">SR Online Shop</h1>
     </div>
@@ -51,12 +49,13 @@
     </button>
 
     <!-- Menu Items -->
-    <ul id="menuList" 
-        class="hidden md:flex flex-col md:flex-row w-full md:w-auto md:space-x-6 mt-4 md:mt-0 font-medium text-center md:text-left">
-      <li><a href="#home" class="block py-2 hover:text-blue-600 transition">Home</a></li>
-      <li><a href="#products" class="block py-2 hover:text-blue-600 transition">Products</a></li>
-      <li><a href="#reviews" class="block py-2 hover:text-blue-600 transition">Reviews</a></li>
-      <li><a href="#contact" class="block py-2 hover:text-blue-600 transition">Contact</a></li>
+    <ul id="menuList"
+        class="hidden w-full md:flex md:w-auto flex-col md:flex-row md:space-x-6 mt-3 md:mt-0 font-medium text-center md:text-left transition-all duration-300">
+      <li><a href="#home" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Home</a></li>
+      <li><a href="#products" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Products</a></li>
+      <li><a href="#reviews" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Reviews</a></li>
+      <li><a href="#contact" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">Contact</a></li>
+      <li><a href="#about" class="nav-link block py-2 hover:text-blue-600 transition-colors duration-200">About</a></li>
     </ul>
 
     <!-- Balance Section -->
@@ -67,7 +66,11 @@
   </div>
 </nav>
 
-<!-- ✅ Mobile Menu Script -->
+
+
+
+
+<!--mobile menu-->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
