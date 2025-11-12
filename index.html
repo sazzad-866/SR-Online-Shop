@@ -132,18 +132,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!--cart -->
   <aside id="cartSection"
-    class="w-80 bg-white shadow-lg rounded-lg p-4 sticky top-24 self-start h-[70vh] overflow-y-auto border hidden lg:block">
+    class="w-80 bg-gradient-to-b from-blue-100 to-blue-200 shadow-lg rounded-lg p-4 sticky top-24 self-start h-[70vh] overflow-y-auto border hidden lg:block">
     <h2 class="text-3xl font-bold mb-3 text-center text-blue-600">🛒 Shopping Cart</h2>
     <div id="cartItems" class="space-y-2"></div>
 
-    <div class="text-right mt-4 border-t pt-3">
-      <p>Subtotal: <span id="subtotal">0</span> BDT</p>
-      <p>Delivery: <span id="delivery">50</span> BDT</p>
-      <p>Discount: <span id="discount">0</span> BDT</p>
-      <p class="font-bold text-blue-600">Total: <span id="total">0</span> BDT</p>
-      <input id="coupon" placeholder="Enter coupon code" class="border p-1 mt-2 w-full rounded">
-      <button id="applyCoupon" class="bg-green-500 text-white px-3 py-1 mt-2 w-full rounded">Apply</button>
-    </div>
+<div class="text-right mt-4 border-t pt-3 text-gray-800 dark:text-gray-100">
+  <p class="font-semibold">Subtotal: <span id="subtotal">0</span> BDT</p>
+  <p class="font-semibold">Delivery: <span id="delivery">50</span> BDT</p>
+  <p class="font-semibold">Discount: <span id="discount">0</span> BDT</p>
+  <p class="font-bold text-blue-600 dark:text-blue-400 mt-2">Total: <span id="total">0</span> BDT</p>
+  <input id="coupon" placeholder="Enter coupon code"
+         class="border p-1 mt-2 w-full rounded dark:bg-gray-700 dark:text-white dark:border-gray-600">
+  <button id="applyCoupon"
+          class="bg-green-500 text-white px-3 py-1 mt-2 w-full rounded hover:bg-green-600 transition">
+    Apply
+  </button>
+</div>
+
   </aside>
 
 </section>
@@ -154,11 +159,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  <!--reviews-->
-  <section id="reviews" class="bg-gray-100 py-10">
-    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Customer Reviews</h2>
-    <div id="reviewContainer" class="max-w-3xl mx-auto overflow-hidden relative text-center"></div>
-  </section>
+<!--reviews-->
+<section id="reviews" class="bg-gray-100 dark:bg-gray-800 py-10 transition-colors duration-300">
+  <h2 class="text-3xl font-bold mb-4 text-center text-blue-600 dark:text-blue-400">
+    Customers Reviews
+  </h2>
+  <div id="reviewContainer"
+       class="max-w-3xl mx-auto overflow-hidden relative text-center text-gray-800 dark:text-gray-200">
+  </div>
+</section>
 
 
   <!--contact_form-->
@@ -177,18 +186,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   <!--About_Us-->
-  <section id="about" class="max-w-4xl mx-auto py-12 px-4 text-center bg-gray-50 rounded-lg shadow-inner mt-10">
-    <h2 class="text-3xl font-bold mb-4 text-blue-600">About SR Online Shop</h2>
-    <p class="text-gray-700 leading-relaxed mb-4">
-      Welcome to <span class="font-semibold text-blue-500">SR Online Shop</span> — your trusted destination for
-      quality and affordable products online. We bring together a wide range of electronics, fashion, and accessories 
-      from verified sellers to give you the best shopping experience.  
-    </p>
-    <p class="text-gray-700 leading-relaxed">
-      Our mission is to make online shopping simple, secure, and enjoyable for everyone. 
-      With reliable delivery, verified products, and responsive support — we ensure satisfaction with every purchase.
-    </p>
-  </section>
+<section id="about" class="max-w-6xl mx-auto py-12 px-4 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-inner mt-10">
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    
+    <!-- Text Column -->
+    <div class="md:flex-1 text-center md:text-left">
+      <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">About SR Online Shop</h2>
+      <p class="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
+        Welcome to <span class="font-semibold text-blue-500">SR Online Shop</span> — your trusted destination for
+        quality and affordable products online. We bring together a wide range of electronics, fashion, and accessories 
+        from verified sellers to give you the best shopping experience.  
+      </p>
+      <p class="text-gray-700 dark:text-gray-200 leading-relaxed">
+        Our mission is to make online shopping simple, secure, and enjoyable for everyone. 
+        With reliable delivery, verified products, and responsive support — we ensure satisfaction with every purchase.
+      </p>
+    </div>
+
+
+
+    <div class="md:flex-1 flex flex-col items-center text-center">
+      <img src="images/ceo.jpg" alt="Owner" class="w-40 h-40 rounded-full object-cover mb-4 shadow-lg">
+      <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">MD Sazzadur Rahman</h3>
+      <p class="text-gray-600 dark:text-gray-300">Founder & CEO</p>
+      <p class="text-gray-500 dark:text-gray-400 text-sm mt-2 px-2">
+        Passionate about delivering quality products with excellent customer experience. Loves tech, shopping, and helping people find the perfect items online.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
 <!--social links -->
 <section class="text-center py-6 bg-white mt-6">
@@ -209,11 +237,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   <!--footer-->
-  <footer class="bg-gray-800 text-white py-4 text-center">
-    <p>&copy; 2025 SROnlineShop. All rights reserved.</p>
-    
-    <button id="backToTop" class="text-sm underline mt-2">Back to Top ↑</button>
-  </footer>
+<footer class="bg-gray-800 text-white py-4 relative">
+  <div class="max-w-7xl mx-auto flex justify-center items-center">
+    <p>&copy; 2025 SR Online Shop. All rights reserved.</p>
+  </div>
+
+  <!--top_button-->
+  <button id="backToTop"
+    class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow-md transition">
+    ↑ Back To Top
+  </button>
+</footer>
+
+
+
 
   <script src="script.js"></script>
 

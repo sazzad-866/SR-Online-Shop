@@ -11,14 +11,23 @@ function changeSlide(dir){
   bannerContainer.style.transform = `translateX(-${bannerIndex * 100}%)`;
 }
 
-// Auto-slide->
+
+
+//Auto_slide
 let bannerInterval = setInterval(() => changeSlide(1), 4000);
 
-//Pause on hover->
-bannerContainer.addEventListener("mouseenter",()=>clearInterval(bannerInterval));
-bannerContainer.addEventListener("mouseleave",()=>{
-  bannerInterval = setInterval(()=>changeSlide(1),4000);
+//Pause on_hover
+bannerContainer.addEventListener("mouseenter", () => {
+  clearInterval(bannerInterval); // stop sliding when hovered
 });
+
+bannerContainer.addEventListener("mouseleave", () => {
+  clearInterval(bannerInterval); // clear any existing interval
+  bannerInterval = setInterval(() => changeSlide(1), 4000); // restart auto-slide
+});
+
+
+
 
 // Swipe support for mobile
 let startX= 0;
